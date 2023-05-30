@@ -4,6 +4,8 @@ import { Profile } from "./Profile"
     constructor(data){
         this.id = data.id
         this.archived = data.archived
+        this.delivery = data.delivery
+        this.pickup = data.pickup
         this.title = data.title
         this.year = data.year
         this.make = data.make
@@ -13,7 +15,8 @@ import { Profile } from "./Profile"
         this.description = data.description
         this.details = data.details
         this.rules = data.rules
-        this.cost = data.cost
+        this.dailyRate = data.dailyRate
+        this.weeklyRate = data.weeklyRate
         this.addons = data.addons
         this.deposit = data.deposit
         this.type = data.type

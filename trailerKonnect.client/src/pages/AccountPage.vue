@@ -54,9 +54,14 @@
             aria-describedby="enter rules">
           </div>
           <div>
-            <label for="cost" class="form-label">Daily Rate</label>
-            <input v-model="editable.cost" required type="text" class="form-control" name="cost" id="cost"
+            <label for="dailyRate" class="form-label">Daily Rate</label>
+            <input v-model="editable.dailyCost" required type="text" class="form-control" name="dailyRate" id="cost"
             aria-describedby="enter daily rate / cost">
+          </div>
+          <div>
+              <label for="weeklyRate" class="form-label">Weekly Rate</label>
+              <input v-model="editable.weeklyRate" required type="text" class="form-control" name="weeklyRate" id="cost"
+              aria-describedby="enter weekly rate / cost">
           </div>
           <div>
             <label for="addons" class="form-label">Addons</label>

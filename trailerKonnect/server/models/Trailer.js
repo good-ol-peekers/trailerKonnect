@@ -5,6 +5,8 @@ const Schema = mongoose.Schema
 export const TrailerSchema = new Schema (
 {
     archived: {type: Boolean, required: true, default: false},
+    delivery: { type: Boolean, required: true, default: false },
+    pickup: { type: Boolean, required: true, default: true },
     title: {type: String, minLength:3, maxLength: 10000, required: true, default: "title goes here"},
     year: {type: String, minLength:3, maxLength: 10000, required: true},
     make: {type: String, minLength:3, maxLength: 10000, required: true},
@@ -14,7 +16,8 @@ export const TrailerSchema = new Schema (
     description: {type: String, minLength:3, maxLength: 10000, default: "description goes here"},
     details: {type: String, minLength:3, maxLength: 10000, default: "details go here"},
     rules: {type: String, minLength:3, maxLength: 10000, default: "rules go here"},
-    cost: {type: String, minLength:3, maxLength: 10000, default: "daily rate goes here"},
+    dailyRate: {type: String, minLength:3, maxLength: 10000, default: "daily rate goes here"},
+    weeklyRate: { type: String, minLength: 3, maxLength: 10000, default: "daily rate goes here" },
     addons: {type: String, minLength:3, maxLength: 10000, default: "addons goes here"},
     deposit: {type: String, minLength:3, maxLength: 10000, default: "deposit goes here"},
     type: {type: String, required: true, enum:['utility', 'flatbed', 'car', 'car dolly', 'dump', 'enclosed', 'horse trailer', 'motorcycle trailer', 'hitch cargo carrier'] },
