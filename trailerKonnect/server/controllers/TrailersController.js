@@ -24,7 +24,7 @@ export class TrailersController extends BaseController {
     async createTrailer(req, res, next) {
         try {
             let body = req.body
-            body.creatorId = req.userInfo.id
+            body.accountId = req.userInfo.id
             const trailer = await trailersService.createTrailer(body)
             res.send(trailer)
         } catch (error) {

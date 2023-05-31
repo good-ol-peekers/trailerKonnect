@@ -33,7 +33,13 @@ const routes = [
     name: 'ActiveTrailer',
     component: loadPage('ActiveTrailerPage'),
     beforeEnter: authSettled
-  },
+  }, 
+  {
+    path: '/mytrailers',
+    name: 'MyTrailers',
+    component: loadPage('MyTrailersPage'),
+    beforeEnter: authGuard
+  }
 ]
 
 export const router = createRouter({

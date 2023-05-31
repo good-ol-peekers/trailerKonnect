@@ -9,6 +9,7 @@ class TrailersService {
         AppState.trailer = null
         const res = await api.post('api/trailer', formData)
         AppState.trailer.push(res.data)
+        console.log(AppState.trailer, 'console log createTrailerListing Service LAyer')
         return res.data
     }
     async getAllTrailers() {
