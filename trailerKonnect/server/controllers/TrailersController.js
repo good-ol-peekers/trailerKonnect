@@ -10,7 +10,14 @@ export class TrailersController extends BaseController {
         .get('/:trailerId', this.getTrailerById)
         .use(Auth0Provider.getAuthorizedUserInfo)
         .post('', this.createTrailer)
-     
+    }
+    async getAll(req, res, next) {
+        try {
+            const trailers = await trailersService.getAll()
+            return res.send(trailers)
+        } catch (error) {
+            next(error)
+        }
     }
     async getTrailerById(req, res, next) {
         try {
@@ -27,14 +34,6 @@ export class TrailersController extends BaseController {
             body.accountId = req.userInfo.id
             const trailer = await trailersService.createTrailer(body)
             res.send(trailer)
-        } catch (error) {
-            next(error)
-        }
-    }
-    async getAll(req, res, next) {
-        try {
-            const trailers = await trailersService.getAll()
-            return res.send(trailers)
         } catch (error) {
             next(error)
         }

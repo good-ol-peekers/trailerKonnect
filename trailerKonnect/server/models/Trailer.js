@@ -37,5 +37,5 @@ TrailerSchema.virtual('trailerOwner',{
     ref: 'Account',
     localField: 'accountId',
     foreignField: '_id',
-    justOne: true,
+    justOne: false,
 })

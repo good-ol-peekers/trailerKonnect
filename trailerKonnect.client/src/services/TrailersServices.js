@@ -6,10 +6,10 @@ import { api } from "./AxiosService.js"
 class TrailersService {
 
     async createTrailerListing(formData) {
-        AppState.trailer = null
+        AppState.newTrailer = null
+        logger.log(formData, 'this is the createTrailerListing FormData')
         const res = await api.post('api/trailer', formData)
-        AppState.trailer.push(res.data)
-        console.log(AppState.trailer, 'console log createTrailerListing Service LAyer')
+        AppState.newTrailer = new Trailer(res.data)
         return res.data
     }
     async getAllTrailers() {
