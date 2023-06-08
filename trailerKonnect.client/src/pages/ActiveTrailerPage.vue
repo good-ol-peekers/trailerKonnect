@@ -1,10 +1,10 @@
 <template>
     <div class="row">
         <div class="col-4 mt-4 p-3">
-            <img class="img-fluid rounded" :src="activeTrailer?.img1" alt="">
+            <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img1" alt="">
         </div>
         <div class="col-6 mt-4 ps-4"> 
-            <p class="fs-2 fw-bold">{{ activeTrailer?.title }}</p>
+            <p class="fs-2 fw-bold">{{ activeTrailer?.ti tle }}</p>
             <p class="fs-4">Year: {{ activeTrailer?.year }}</p>
             <p class="fs-4">Make: {{ activeTrailer?.make }}</p>
             <p class="fs-4">{{ activeTrailer?.description }}</p>
@@ -18,25 +18,25 @@
             <p class="fs-5">Overall Trailer Width: {{ activeTrailer?.width }}</p>
         </div>
         <div class="col-4 p-3 mt-4">
-            <img class="img-fluid rounded" :src="activeTrailer?.img2" alt="">
+            <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img2" alt="">
         </div>
         <div class="col-4 p-3 mt-4">
-            <img class="img-fluid rounded" :src="activeTrailer?.img3" alt="">
+            <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img3" alt="">
         </div>
         <div class="col-4 p-3 mt-4">
-            <img class="img-fluid rounded" :src="activeTrailer?.img4" alt="">
+            <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img4" alt="">
         </div>
         <div class="col-4 p-3 mt-4">
-            <img class="img-fluid rounded" :src="activeTrailer?.img4" alt="">
+            <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img4" alt="">
         </div>
         <div class="col-4 p-3 mt-4">
-            <img class="img-fluid rounded" :src="activeTrailer?.img5" alt="">
+            <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img5" alt="">
         </div>
         <div class="col-4 p-3 mt-4">
-            <img class="img-fluid rounded" :src="activeTrailer?.img6" alt="">
+            <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img6" alt="">
         </div>
         <div class="col-4 p-3 mt-4">
-            <img class="img-fluid rounded" :src="activeTrailer?.img7" alt="">
+            <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img7" alt="">
         </div>
         <div class="col-4 p-3 mt-5 text-center">
             <p class="fs-4">Rules for trailer: examples such as no off road use with trailer: {{ activeTrailer?.rules }}</p>
@@ -117,5 +117,8 @@ export default {
 
 
 <style lang="scss" scoped>
-
+.box-shadow1{
+    box-shadow: 5px 5px 12px blue, 10px 10px 12px red, 15px 15px 10px green;
+}
+    
 </style>
