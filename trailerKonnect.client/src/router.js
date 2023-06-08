@@ -26,7 +26,7 @@ const routes = [
     path: '/profile/:profileId',
     name: 'Profile',
     component: loadPage('ProfilePage'),
-    beforeEnter: authGuard
+    beforeEnter: authSettled
   },
   {
     path: '/trailer',

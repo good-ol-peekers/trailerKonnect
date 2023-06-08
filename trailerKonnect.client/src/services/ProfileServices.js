@@ -5,10 +5,11 @@ import { api } from "./AxiosService"
 
 
 class ProfileServices {
-async getProfile(){
+async getProfile(profileId){
     try {
-        const res = await api.get('/profile')
+        const res = await api.get('api/profile' + profileId)
         AppState.profile = new Profile(res.data)
+        logger.log('getting profile', res.data)
     } catch (error) {
         
     }
