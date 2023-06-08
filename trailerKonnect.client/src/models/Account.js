@@ -3,8 +3,14 @@ export class Account {
     this.id = data.id
     this.email = data.email
     this.name = data.name
-    this.picture = data.picture
-    this.bio = data.bio
-    // TODO add additional properties if needed
   }
 }
+// export class profile extends Account {
+  //   constructor(data) {
+    //     this.id = data.id
+//     this.picture = data.picture
+//     this.bio = data.bio
+//     this.location = data.location
+//     this.rating = data.rating
+//   }
+// }

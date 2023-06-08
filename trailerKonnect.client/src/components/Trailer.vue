@@ -1,13 +1,13 @@
 <template>
-    <div class="row">
-        <div class="col-6">
+    <div class="trailerCard">
+        <div class="">
             <router-link class="selectable" :to="{ name: 'ActiveTrailer', params: { trailerId: trailer.id} }">
-                <img src="image source" class="img-fluid rounded-top" alt="trailer img here">
+                <img class="img-fluid rounded" :src="trailer.img1" :alt="trailer.img2">
             </router-link>
     
             <div>
-                <h1>{{ trailer.id }}</h1>
-                <!-- <img :src="" alt=""> -->
+                <p class="fs-3">{{ trailer.title }}</p>
+                <p class="fs-4">{{ trailer.dailyRate }}</p>
             </div>
         </div>
 
@@ -28,5 +28,7 @@ export default {
 
 
 <style lang="scss" scoped>
-
+.trailerCard {
+    border: 2px, solid, black;
+}
 </style>
