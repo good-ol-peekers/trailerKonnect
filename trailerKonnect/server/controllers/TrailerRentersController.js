@@ -21,7 +21,7 @@ export class TrailerRentersController extends BaseController{
             next(error)
         }
     }
-    // **NOTE - need to change this to get trailerHostsTrailerRentals, and get RentersTrailerRentals one will use in the empty string above id or come from accountsController to trailerRentalsService and respectively profiles counterpart for renter of host
+    // **NOTE - Turn this INTO two Different Gets! need to change this to get trailerHostsTrailerRentals, and get RentersTrailerRentals one will use in the empty string above id or come from accountsController to trailerRentalsService and respectively profiles counterpart for renter of host
     async getMyTrailerRentals(req, res, next) {
         try {
             const TrailerRenter = await trailerRentersService.getTrailerRenters()
