@@ -3,9 +3,9 @@
 
         <div class="row">
             <div class="col-4 mt-4 p-3">
-                <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img1" alt="">
+                <img class="img-fluid rounded box-shadow1 user-select-none" :src="activeTrailer?.img1" alt="">
             </div>
-            <div class="col-6 mt-4 ps-4"> 
+            <div class="col-6 mt-4 ps-4 user-select-none"> 
                 <p class="fs-2 fw-bold">{{ activeTrailer?.title }}</p>
                 <p class="fs-4">Year: {{ activeTrailer?.year }}</p>
                 <p class="fs-4">Make: {{ activeTrailer?.make }}</p>
@@ -19,7 +19,7 @@
                 <p class="fs-5">Overall Trailer Length: {{ activeTrailer?.lengthSize }}</p>
                 <p class="fs-5">Overall Trailer Width: {{ activeTrailer?.width }}</p>
             </div>
-            <div class="col-4 p-3 mt-4">
+            <div class="col-4 p-3 mt-4 user-select-none">
                 <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img2" alt="">
             </div>
             <div class="col-4 p-3 mt-4">
@@ -40,20 +40,20 @@
             <div class="col-4 p-3 mt-4">
                 <img class="img-fluid rounded box-shadow1" :src="activeTrailer?.img7" alt="">
             </div>
-            <div class="col-4 p-3 mt-5 text-center">
+            <div class="col-4 p-3 mt-5 text-center user-select-none">
                 <p class="fs-4">Rules for trailer: examples such as no off road use with trailer: {{ activeTrailer?.rules }}</p>
                 <p class="fs-4">Additional addons for the trailer such as wiring adaptors, ball hitches, or tie downs: {{ activeTrailer?.addons }}</p>
                 <p class="fs-4">Daily rate for trailer rental: ${{ activeTrailer?.dailyRate }}</p>
                 <p class="fs-4">Weekly rate for trailer rental: ${{ activeTrailer?.weeklyRate }}</p>
                 <p class="fs-4">Optional deposit: ${{ activeTrailer?.deposit }}</p>
             </div>
-            <div class="col-4 p-3 mt-5 text-center">
+            <div class="col-4 p-3 mt-5 text-center selectable">
                 <button @click="purchaseTrailerRental()" class="btn btn-success">Purchase Trailer Rental</button>
             </div>
             
             <div>
                 <h1>{{ activeTrailer?.trailerOwner?.name }}</h1>
-                <img :src="activeTrailer?.trailerOwner?.picture" alt="">
+                <img class="img-fluid selectable" :src="activeTrailer?.trailerOwner?.picture" alt="">
             </div>
         </div>
     </div>
@@ -65,6 +65,7 @@
 import { useRoute, useRouter } from 'vue-router';
 import { computed, watchEffect } from 'vue';
 import { trailersService } from '../services/TrailersServices';
+import { TrailerRentalsService } from '../services/TrailerRentalsService'
 import Pop from '../utils/Pop';
 import { AppState } from '../AppState';
 
@@ -90,6 +91,15 @@ export default {
         })
 
         return {
+            async purchaseTrailerRental(){
+                try {
+                    let body = {}
+                    
+                    await TrailerRentalsService.purchaseTrailerRental()
+                } catch (error) {
+                    Pop.error(error, "purchase Trailer Rental");
+                }
+            },
             activeTrailer: computed(() => AppState.trailer),
             profile: computed(() => AppState.profile),
             account: computed(() => AppState.account),

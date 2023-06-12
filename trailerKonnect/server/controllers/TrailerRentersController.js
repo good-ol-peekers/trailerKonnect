@@ -9,12 +9,13 @@ export class TrailerRentersController extends BaseController{
         this.router
         .use(Auth0Provider.getAuthorizedUserInfo)
         .get('', this.getMyTrailerRentals)
-        .post('', this.createTrailerRenter)
+        .post('/:trailerId', this.createTrailerRenter)
     }
     async createTrailerRenter(req, res, next) {
         try {
             let body = req.body
             body.renterProfileId = req.userInfo.id
+            body.trailerId = req.params.trailerId
             const trailerRental = await trailerRentersService.createTrailerRental(body)
             res.send(trailerRental)
         } catch (error) {
