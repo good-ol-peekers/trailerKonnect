@@ -1,6 +1,6 @@
-import { Profile } from "./Profile"
+import { Profile } from "./Account"
 
- export class Trailer{
+export class Trailer{
     constructor(data){
         this.id = data.id
         this.archived = data.archived

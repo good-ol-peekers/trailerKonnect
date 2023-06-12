@@ -1,10 +1,8 @@
 <template>
-    <div class="Container-fluid">
-        <div class="row">
-            <div class="col-4">
-                <div v-for="t in trailer">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div  v-for="t in trailer" class="col-11 mt-5">
                     <Trailer :trailer="t" />
-                </div>
             </div>
         </div>
     </div>

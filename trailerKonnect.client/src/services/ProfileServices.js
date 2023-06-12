@@ -1,11 +1,11 @@
 import { AppState } from "../AppState"
-import { Profile } from "../models/Profile"
+// import { Profile } from "../models/Profile"
 import { logger } from "../utils/Logger"
 import { api } from "./AxiosService"
-
+import { Profile } from "../models/Account"
 
 class ProfileServices {
-async getProfile(profileId){
+async getProfileById(profileId){
     try {
         const res = await api.get('api/profile' + profileId)
         AppState.profile = new Profile(res.data)

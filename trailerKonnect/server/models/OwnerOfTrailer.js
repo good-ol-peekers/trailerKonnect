@@ -9,7 +9,7 @@ export const OwnerOfTrailerSchema = new Schema(
   },
   { timestamps: true, toJSON: { virtuals: true } }
 )
-OwnerOfTrailerSchema.virtual('trailerOwnerAccount',{
+OwnerOfTrailerSchema.virtual('trailerOwner',{
     ref: 'Account',
     localField: 'accountId',
     foreignField: '_id',

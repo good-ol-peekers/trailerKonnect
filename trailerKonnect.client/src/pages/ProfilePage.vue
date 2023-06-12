@@ -41,28 +41,8 @@
                                     <div :class="expanded ? 'expanded' : 'expandable'">
                                         <p class="p-2 fs-6 mt-2">{{ profile.bio }}</p>
                                     </div>
-                                    <div class="d-flex flex-column align-items-center">
-                                        <button v-if="expanded" @click="expand" class='btn-cool text-center'>read
-                                            less</button>
-                                        <button v-else @click="expand" class='btn-cool text-center'>read more</button>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="col-12 bg-dark bg-gradient my-md-3 rounded box-shadow p-3">
-                            <div class="col-12 bg-custom-warning my-md-3 rounded box-shadow p-3">
-                                <div class="col-8 m-auto bg-danger text-center rounded box-shadow">
-                                    <h4 class="my-3 py-3">{{ profile.name }}'s Read Books</h4>
-                                </div>
-
-                            </div>
-                            <div class="col-12 bg-custom-danger my-md-3 rounded box-shadow p-3">
-                                <div class="col-8 m-auto bg-dark bg-gradient text-light text-center rounded box-shadow">
-                                    <h4 class="my-3 py-3">{{ profile.name }}'s Clubs</h4>
-                                </div>
-
-
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -78,7 +58,7 @@ import { computed, onUpdated, watchEffect } from 'vue';
 import { logger } from '../utils/Logger.js';
 import Pop from '../utils/Pop.js';
 import { useRoute } from 'vue-router';
-import { profilesService } from '../services/ProfilesService.js'
+import { profileServices } from '../services/ProfileServices';
 
 
 export default {
@@ -88,7 +68,7 @@ export default {
             try {
                 const profileId = route.params.profileId;
                 logger.log(profileId);
-                await profilesService.getProfileById(profileId);
+                await profileServices.getProfileById(profileId);
             }
             catch (error) {
                 logger.error(error);
@@ -96,19 +76,6 @@ export default {
             }
         }
 
-
-
-
-
-        // async function getCommentsByProfileId() {
-        //     try {
-        //         const profileId = route.params.profileId
-        //         await commentsService.getCommentsByProfileId(profileId)
-        //     } catch (error) {
-        //         logger.error(error)
-        //         Pop.error(error.message)
-        //     }
-        // }
 
         watchEffect(() => {
             if (route.params.profileId) {
