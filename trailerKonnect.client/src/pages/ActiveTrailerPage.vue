@@ -64,10 +64,10 @@
 <script>
 import { useRoute, useRouter } from 'vue-router';
 import { computed, watchEffect } from 'vue';
-import { trailersService } from '../services/TrailersServices';
-import { TrailerRentalsService } from '../services/TrailerRentalsService'
+import { trailersService } from '../services/TrailersServices.js';
+import { TrailerRentalsService } from '../services/TrailerRentalsService.js';
 import Pop from '../utils/Pop';
-import { AppState } from '../AppState';
+import { AppState } from '../AppState.js';
 
 export default {
     setup(){
