@@ -93,9 +93,10 @@ export default {
         return {
             async purchaseTrailerRental(){
                 try {
+                    const trailerId = route.params.trailerId
                     let body = {}
-                    
-                    await TrailerRentalsService.purchaseTrailerRental()
+                    body.ownerOfTrailerAccountId = this.activeTrailer.trailerOwner.id
+                    await TrailerRentalsService.purchaseTrailerRental(body, trailerId)
                 } catch (error) {
                     Pop.error(error, "purchase Trailer Rental");
                 }

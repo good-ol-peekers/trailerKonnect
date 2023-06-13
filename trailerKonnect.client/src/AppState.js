@@ -14,4 +14,6 @@ export const AppState = reactive({
   newTrailer: null,
     /** @type {import('./models/Account.js').Profile} */
   profile: {},
+  /** @type {import('./models/TrailerRenter.js').TrailerRenter} */
+  purchasedRentalByRenter: {},
 })
