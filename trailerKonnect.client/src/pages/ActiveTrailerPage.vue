@@ -51,9 +51,10 @@
                 <button @click="purchaseTrailerRental()" class="btn btn-success">Purchase Trailer Rental</button>
             </div>
             
-            <div>
+            <div class="col-12">
+                <h1>Meet Trailer Host</h1>
                 <h1>{{ activeTrailer?.trailerOwner?.name }}</h1>
-                <img class="img-fluid selectable" :src="activeTrailer?.trailerOwner?.picture" alt="">
+                <img class="img-fluid selectable" :src="activeTrailer?.trailerOwner?.picture" alt="profile pic">
             </div>
         </div>
     </div>
@@ -65,9 +66,10 @@
 import { useRoute, useRouter } from 'vue-router';
 import { computed, watchEffect } from 'vue';
 import { trailersService } from '../services/TrailersServices.js';
-import { TrailerRentalsService } from '../services/TrailerRentalsService.js';
+// import { TrailerRentalsService } from '../services/TrailerRentalsService';
 import Pop from '../utils/Pop';
 import { AppState } from '../AppState.js';
+import { accountService } from '../services/AccountService';
 
 export default {
     setup(){
@@ -84,6 +86,7 @@ export default {
                 router.push('/')
                 }
             }
+
         watchEffect(() => {
             if(route.params.trailerId){
                 getTrailerById();
@@ -102,8 +105,6 @@ export default {
                 }
             },
             activeTrailer: computed(() => AppState.trailer),
-            profile: computed(() => AppState.profile),
-            account: computed(() => AppState.account),
 
         }
     }

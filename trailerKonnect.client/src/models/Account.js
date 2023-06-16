@@ -3,6 +3,8 @@ export class Account {
     this.id = data.id
     this.email = data.email
     this.name = data.name
+    this.picture = data.picture
+    this.bio = data.bio
   }
 }
 export class Profile extends Account {

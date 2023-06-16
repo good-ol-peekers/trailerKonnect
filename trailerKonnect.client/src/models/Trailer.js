@@ -28,13 +28,13 @@ export class Trailer{
         this.img6 = data.img6
         this.img6 = data.img6
         this.img7 = data.img7
-        this.accountId = data.accountId
+        this.trailerOwner = data.trailerOwner
     }
 }
-export class trailerOwner extends Trailer {
-    constructor(data){
-        super(data.profile)
-        this.profile = new Profile(data.profile)
-        this.accountId = this.accountId
-    }
-}
+// export class trailerOwner extends Trailer {
+//     constructor(data){
+//         super(data.profile)
+//         this.profile = new Profile(data.trailerOwner)
+//         // this.profile.id = this.accountId
+//     }
+// }

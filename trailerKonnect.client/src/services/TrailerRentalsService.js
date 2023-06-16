@@ -3,7 +3,7 @@ import { TrailerRenter } from "../models/TrailerRenter.js"
 import { logger } from "../utils/Logger.js"
 import { api } from "./AxiosService.js"
 
-class  TrailerRentalsService {
+class TrailerRentalsService {
     async purchaseTrailerRental(body, trailerId){
         const res = await api.post('api/trailerRenters/' + trailerId, body)
         logger.log(res.data, 'PurchasedTrailerRental Object RESPONSE DATA')

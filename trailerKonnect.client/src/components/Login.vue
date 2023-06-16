@@ -2,7 +2,7 @@
   <span class="navbar-text">
     <button class="btn selectable text-success lighten-30 text-uppercase my-2 my-lg-0" @click="login"
       v-if="!user.isAuthenticated">
-      Login
+      Host Trailer / Rent Trailer
     </button>
     <div v-else>
       <div class="dropdown my-2 my-lg-0">
