@@ -146,17 +146,11 @@ export default {
 
         return {
             editable,
-            // trailer: computed(() => {
-            //   if(!category.value){
-            //     return AppState.trailer
-            //   };
-            // }),
             account: computed(() => AppState?.account),
             newTrailer: computed(() => AppState.newTrailer),
             async createTrailerListing() {
                 try {
                     const formData = editable.value
-                    // formData.accountId = account?.id
                     let newTrailer = await trailersService.createTrailerListing(formData)
                     logger.log(newTrailer)
                     editable.value = {}

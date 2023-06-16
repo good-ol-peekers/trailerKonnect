@@ -23,7 +23,7 @@ class TrailersService {
     const res = await api.get('api/trailer/' + trailerId)
     logger.log('get trailer by Id', res.data)
     AppState.trailer = new Trailer(res.data)
-   }
+    }
 
 }
 export const trailersService = new TrailersService()
