@@ -8,7 +8,15 @@ export class AccountController extends BaseController {
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', this.getUserAccount)
+      .get('/accountId', this.getMyActiveTrailerRentals)
       .put('', this.editAccount)
+  }
+  getMyActiveTrailerRentals(req, res, next) {
+    try {
+      
+    } catch (error) {
+      
+    }
   }
 
   async getUserAccount(req, res, next) {

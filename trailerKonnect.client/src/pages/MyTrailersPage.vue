@@ -4,8 +4,10 @@
     <h1>Welcome {{ account.name }}</h1>
     <img class="rounded" :src="account.picture" alt="" />
   </div>
-  
-  
+  <div>
+    my active trailer rentals
+  </div>
+<div>edit my trailers form</div>  
   
   <div class="container-fluid">
     <div class="row">
