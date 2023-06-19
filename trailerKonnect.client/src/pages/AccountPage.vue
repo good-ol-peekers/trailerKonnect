@@ -6,20 +6,20 @@
     </div>
 
 
-    <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Edit Account Information</button>
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Edit Account Information / Update Address</button>
 
     <router-link :to="{ name: 'MyTrailers', params: { accountId: account.id } } ">
-        <button class="btn btn-outline-success">Go To My Trailers</button>
+        <button class="btn btn-outline-success">View My Trailer Listings / Create Trailer Listing / Edit Trailer Listings</button>
     </router-link>
 
 
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Edit Account Information</h5>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Edit Account Information / Update</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
+    </div>
+    <div class="offcanvas-body">
                     <form @submit.prevent="editAccount()">
                         <div class="form-floating mb-2">
                             <input v-model="editable.picture" :placeholder="account.picture" required type="text"
@@ -38,13 +38,8 @@
                         </div>
                         <button class="btn btn-outline-success mb-4" type="submit">Save Changes</button>
                     </form>
-      </div>
     </div>
-
-
-
-
-
+</div>
 </template>
 
 <script>

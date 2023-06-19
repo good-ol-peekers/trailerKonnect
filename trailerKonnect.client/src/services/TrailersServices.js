@@ -8,6 +8,7 @@ class TrailersService {
     async getMyTrailers(accountId) {
         const res = await api.get('account/mytrailers/' + accountId)
         logger.log(res.data)
+        AppState.myTrailers.push(res.data) 
     }
     async createTrailerListing(formData) {
         AppState.newTrailer = null

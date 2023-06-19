@@ -4,8 +4,8 @@
     <h1>Welcome {{ account.name }}</h1>
     <img class="rounded" :src="account.picture" alt="" />
   </div>
-  <div>
-    my active trailer rentals
+  <div  v-for="t in trailer" class="col-11 mt-5">
+    <Trailer :trailer="t" />
   </div>
 <div>edit my trailers form</div>  
   
@@ -32,13 +32,14 @@
   </template>
 
 <script>
-import { ref, computed, onMounted } from "vue"
-import { AppState } from '../AppState'
+import { ref, computed, onMounted } from "vue";
+import { AppState } from '../AppState';
 import { trailersService } from '../services/TrailersServices.js';
 // import { router } from '../router';
 import Pop from '../utils/Pop';
 import { logger } from "../utils/Logger";
 import { useRoute } from "vue-router";
+import Trailer from "../components/Trailer.vue";
 export default {
   setup() {
     const editable = ref({ type: 'utility' })
@@ -62,8 +63,9 @@ export default {
       //     return AppState.trailer
       //   };
       // }),
+      trailer: computed(() => AppState?.myTrailers),
       account: computed(() => AppState?.account),
-      newTrailer: computed(() => AppState.newTrailer),
+      newTrailer: computed(() => AppState?.newTrailer),
       async createTrailerListing(){
         try {
           const formData = editable.value
@@ -77,7 +79,8 @@ export default {
         }
       }
     }
-  }
+  },
+  components: { Trailer }
 }
 </script>
 
