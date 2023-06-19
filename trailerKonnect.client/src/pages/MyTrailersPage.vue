@@ -22,7 +22,7 @@
     
     <component>
       <div class="container-fluid">
-        <div class="row">
+        <div class="row d-flex justify-content-center">
           <div class="col-md-6">
             <createTrailerForm/>
           </div>
@@ -32,16 +32,29 @@
   </template>
 
 <script>
-import { ref, computed } from "vue"
+import { ref, computed, onMounted } from "vue"
 import { AppState } from '../AppState'
 import { trailersService } from '../services/TrailersServices.js';
 // import { router } from '../router';
 import Pop from '../utils/Pop';
 import { logger } from "../utils/Logger";
+import { useRoute } from "vue-router";
 export default {
   setup() {
     const editable = ref({ type: 'utility' })
+    const route = useRoute();
+    async function getMyTrailers() {
+      try {
+        const accountId = route.params.accountId
+        await trailersService.getMyTrailers(accountId)
+      } catch (error) {
+        Pop.error(error, "getMyTrailers / MyTrailersPage")
+      }
+    }
 
+    onMounted(() => {
+      getMyTrailers();
+    });
     return {
       editable,
       // trailer: computed(() => {

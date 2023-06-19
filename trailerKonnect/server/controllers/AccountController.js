@@ -1,6 +1,7 @@
 import { Auth0Provider } from '@bcwdev/auth0provider'
 import { accountService } from '../services/AccountService'
 import BaseController from '../utils/BaseController'
+import { trailersService } from '../services/TrailersService'
 
 export class AccountController extends BaseController {
   constructor() {
@@ -8,14 +9,17 @@ export class AccountController extends BaseController {
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', this.getUserAccount)
-      .get('/accountId', this.getMyActiveTrailerRentals)
+      .get('/mytrailers/:accountId', this.getMyActiveTrailerRentals)
       .put('', this.editAccount)
   }
-  getMyActiveTrailerRentals(req, res, next) {
+/**this takes the account ID from the params and uses the account ID to get that accounts trailer listings to display them. these are not an array of booked trailer rentals. */
+  async getMyActiveTrailerRentals(req, res, next) {
     try {
-      
+      let accountId = req.params.accountId
+      const trailers = await trailersService.getMyActiveTrailerRentals(accountId)
+      res.send(trailers)
     } catch (error) {
-      
+      next(error)
     }
   }
 

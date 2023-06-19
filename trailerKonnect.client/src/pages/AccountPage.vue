@@ -8,7 +8,7 @@
 
     <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Edit Account Information</button>
 
-    <router-link :to="{ name: 'MyTrailers' }">
+    <router-link :to="{ name: 'MyTrailers', params: { accountId: account.id } } ">
         <button class="btn btn-outline-success">Go To My Trailers</button>
     </router-link>
 

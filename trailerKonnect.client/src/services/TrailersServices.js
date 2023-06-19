@@ -4,7 +4,11 @@ import { logger } from "../utils/Logger.js"
 import { api } from "./AxiosService.js"
 
 class TrailersService {
-
+    /**this getMyTrailers function gets an array of the accounts personal trailer listings to the myTrailersPage. these are !booked rentals. */
+    async getMyTrailers(accountId) {
+        const res = await api.get('account/mytrailers/' + accountId)
+        logger.log(res.data)
+    }
     async createTrailerListing(formData) {
         AppState.newTrailer = null
         logger.log(formData, 'this is the createTrailerListing FormData')

@@ -41,7 +41,7 @@ const routes = [
     beforeEnter: authSettled
   }, 
   {
-    path: '/mytrailers',
+    path: '/account/mytrailers/:accountId',
     name: 'MyTrailers',
     component: loadPage('MyTrailersPage'),
     beforeEnter: authGuard

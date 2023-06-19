@@ -5,6 +5,10 @@ export class Account {
     this.name = data.name
     this.picture = data.picture
     this.bio = data.bio
+    this.state = data.state
+    this.city = data.city
+    this.streetAddress = data.streetAddress
+    this.zipCode = data.zipCode
   }
 }
 export class Profile extends Account {
