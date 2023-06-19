@@ -45,6 +45,11 @@ const routes = [
     name: 'MyTrailers',
     component: loadPage('MyTrailersPage'),
     beforeEnter: authGuard
+  },
+  {
+    path: '/terms',
+    name: 'Terms',
+    component: loadPage('TermsPage'),
   }
 ]
 

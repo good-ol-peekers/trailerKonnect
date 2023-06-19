@@ -11,9 +11,10 @@
         <div>
           Hitch Trailer Now
         </div>
-        <div>
-          FACEBOOK
-          <i class="mdi mdi-facebook"></i>
+        <div class="ps-3 my-3">
+            <a href="https://www.facebook.com/profile.php?id=100089984958499" class="mdi mdi-facebook fs-5">
+              <p class="fw-bold">FACEBOOK</p>
+            </a>
         </div>
         <div>
           TWITTER
@@ -25,9 +26,11 @@
         </div>
       </div>
       <div class="col-6">
-        <div>
-          terms
-        </div>
+  <router-link :to="{ name: 'Terms' }" class="btn text-success lighten-30 selectable text-uppercase">
+    <div>
+      terms
+    </div>
+  </router-link>
         <div>
           privacy
         </div>
