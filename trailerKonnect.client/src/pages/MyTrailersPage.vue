@@ -1,26 +1,30 @@
 <template>
-
-  <div class="about text-center">
-    <h1>Welcome {{ account.name }}</h1>
-    <img class="rounded" :src="account.picture" alt="" />
-  </div>
-  <div  v-for="t in trailer" class="col-11 mt-5">
-    <Trailer :trailer="t" />
-  </div>
-<div>edit my trailers form</div>  
-  
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 text-center my-3">
-        <h1>Add New Trailer Listing</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="about text-center">
+        <h1>Welcome {{ account.name }}</h1>
+        <img class="rounded" :src="account.picture" alt="" />
       </div>
     </div>
+  </div>
+</div>
+
+
+
+
+<div v-for="t in myTrailers" class="container-fluid">
+  <div  class="row">
+    <div class="col-12 text-center my-3 bg-secondary">
+      <myTrailers :myTrailers="t"/>
     </div>
+  </div>
+</div>
 
     
     
     
-    <component>
+
       <div class="container-fluid">
         <div class="row d-flex justify-content-center">
           <div class="col-md-6">
@@ -28,7 +32,7 @@
           </div>
         </div>
       </div>
-    </component>
+
   </template>
 
 <script>
@@ -39,7 +43,6 @@ import { trailersService } from '../services/TrailersServices.js';
 import Pop from '../utils/Pop';
 import { logger } from "../utils/Logger";
 import { useRoute } from "vue-router";
-import Trailer from "../components/Trailer.vue";
 export default {
   setup() {
     const editable = ref({ type: 'utility' })
@@ -63,9 +66,9 @@ export default {
       //     return AppState.trailer
       //   };
       // }),
-      trailer: computed(() => AppState?.myTrailers),
+      myTrailers: computed(() => AppState?.myTrailers),
       account: computed(() => AppState?.account),
-      newTrailer: computed(() => AppState?.newTrailer),
+      // newTrailer: computed(() => AppState?.newTrailer),
       async createTrailerListing(){
         try {
           const formData = editable.value
@@ -80,7 +83,7 @@ export default {
       }
     }
   },
-  components: { Trailer }
+  // components: { }
 }
 </script>
 

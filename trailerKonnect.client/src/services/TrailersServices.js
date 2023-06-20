@@ -7,8 +7,8 @@ class TrailersService {
     /**this getMyTrailers function gets an array of the accounts personal trailer listings to the myTrailersPage. these are !booked rentals. */
     async getMyTrailers(accountId) {
         const res = await api.get('account/mytrailers/' + accountId)
-        logger.log(res.data)
-        AppState.myTrailers.push(res.data) 
+        logger.log(res.data, 'get my trailers')
+        AppState.myTrailers = res.data.map(t => new Trailer(t))
     }
     async createTrailerListing(formData) {
         AppState.newTrailer = null

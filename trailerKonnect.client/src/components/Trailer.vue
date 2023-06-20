@@ -1,20 +1,17 @@
 <template>
-    <div v-if="trailer" class="trailerCard row">
+    <div class="trailerCard row">
         <div  class="col-8 padding0">
             <router-link class="selectable" :to="{ name: 'ActiveTrailer', params: { trailerId: trailer?.id } }">
                 <img class="img-fluid rounded img-height" :src="trailer?.img1" :alt="trailer?.img2">
             </router-link>
         </div>
-
             <div class="col-4">
                 <p class="fs-4">{{ trailer?.title }}</p>
                 <p class="fs-5">{{ trailer?.dailyRate }}</p>
             </div>
+    </div>
 
-    </div>
-    <div v-else>
-        loading..
-    </div>
+
 </template>
 
 
