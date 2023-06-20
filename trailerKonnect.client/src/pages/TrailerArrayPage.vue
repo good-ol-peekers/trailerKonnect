@@ -1,7 +1,7 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid bg-secondary">
         <div class="row d-flex justify-content-center">
-            <div  v-for="t in trailer" class="col-11 mt-5">
+            <div  v-for="t in trailer" class="col-11 my-5 bg-dark">
                     <Trailer :trailer="t" />
             </div>
         </div>

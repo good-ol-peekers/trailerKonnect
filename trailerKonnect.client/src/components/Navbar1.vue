@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid bg-secondary">
+    <div class="container-fluid bg-primary">
         <div class="row">
             <div class="col-12 d-flex justify-content-between mt-3">
                 <router-link :to="{ name: 'Home' }" class="btn text-success selectable text-uppercase">
@@ -10,7 +10,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 

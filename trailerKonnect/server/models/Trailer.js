@@ -7,7 +7,7 @@ export const TrailerSchema = new Schema (
     archived: {type: Boolean, required: true, default: false},
     delivery: { type: Boolean, required: true, default: false },
     pickup: { type: Boolean, required: true, default: true },
-    title: {type: String, minLength:1, maxLength: 10000, required: true, default: "title goes here"},
+    model: {type: String, minLength:1, maxLength: 10000, required: true, default: "title goes here"},
     year: {type: String, minLength:1, maxLength: 10000, required: true},
     make: {type: String, minLength:1, maxLength: 10000, required: true},
     capacity: {type: String, minLength:1, maxLength: 10000, required: true},
