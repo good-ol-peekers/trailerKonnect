@@ -12,7 +12,7 @@ export const AccountSchema = new Schema(
     city: { type: String, minLength: 2, maxLength: 100, },
     streetAddress: { type: String, minLength: 2, maxLength: 10000, },
     zipCode: { type: String, minLength: 3, maxLength: 100, }
-    // NOTE If you wish to add additional properties do so here
+    // NOTE turn location into a relationship object then populate it
   },
   { timestamps: true, toJSON: { virtuals: true } }
 )

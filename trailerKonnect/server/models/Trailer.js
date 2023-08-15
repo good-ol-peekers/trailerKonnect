@@ -10,6 +10,7 @@ export const TrailerSchema = new Schema (
     model: {type: String, minLength:1, maxLength: 10000, required: true, default: "title goes here"},
     year: {type: String, minLength:1, maxLength: 10000, required: true},
     make: {type: String, minLength:1, maxLength: 10000, required: true},
+    weight: { type: String, minLength: 1, maxLength: 10000, required: true },
     capacity: {type: String, minLength:1, maxLength: 10000, required: true},
     lengthSize: {type: String, minLength:1, maxLength: 10000, required: true},
     width: {type: String, minLength:1, maxLength: 10000, required: true},
@@ -33,7 +34,7 @@ accountId: {type: Schema.Types.ObjectId, ref: 'Account', required: true},
 { timestamps: true, toJSON: { virtuals: true } }
 )
 
-TrailerSchema.virtual('trailerOwner',{
+TrailerSchema.virtual('profile',{
     ref: 'Account',
     localField: 'accountId',
     foreignField: '_id',

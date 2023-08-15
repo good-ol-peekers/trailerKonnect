@@ -1,4 +1,4 @@
-import { Profile } from "./Account"
+import { Profile } from "./Profile"
 
 export class Trailer{
     constructor(data){
@@ -6,7 +6,7 @@ export class Trailer{
         this.archived = data.archived
         this.delivery = data.delivery
         this.pickup = data.pickup
-        this.title = data.title
+        this.model = data.model
         this.year = data.year
         this.make = data.make
         this.capacity = data.capacity
@@ -28,13 +28,6 @@ export class Trailer{
         this.img6 = data.img6
         this.img6 = data.img6
         this.img7 = data.img7
-        this.trailerOwner = data.trailerOwner
+        this.trailerOwner = data.profile
     }
 }
-// export class trailerOwner extends Trailer {
-//     constructor(data){
-//         super(data.profile)
-//         this.profile = new Profile(data.trailerOwner)
-//         // this.profile.id = this.accountId
-//     }
-// }

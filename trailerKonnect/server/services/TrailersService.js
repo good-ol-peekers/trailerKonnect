@@ -8,7 +8,7 @@ class TrailersService {
     async getTrailerById(trailerId) {
         const trailer = await dbContext.Trailers.findById(trailerId)
         // @ts-ignore
-        await trailer.populate('trailerOwner')
+        .populate('profile')
         return trailer
     }
     async createTrailer(body) {

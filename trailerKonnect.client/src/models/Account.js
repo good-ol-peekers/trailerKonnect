@@ -11,12 +11,3 @@ export class Account {
     this.zipCode = data.zipCode
   }
 }
-export class Profile extends Account {
-    constructor(data) {
-        this.id = data.id
-    this.picture = data.picture
-    this.bio = data.bio
-    this.location = data.location
-    this.rating = data.rating
-  }
-}

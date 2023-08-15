@@ -1,8 +1,7 @@
 import { AppState } from "../AppState"
-// import { Profile } from "../models/Profile"
+import { Profile } from "../models/Profile"
 import { logger } from "../utils/Logger"
 import { api } from "./AxiosService"
-import { Profile } from "../models/Account"
 
 class ProfileServices {
 async getProfileById(profileId){

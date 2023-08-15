@@ -1,11 +1,11 @@
 <template>
-    <div class="container-fluid bg-primary">
+    <div class="container-fluid bg-secondary">
         <div class="row">
-            <div class="col-12 d-flex justify-content-between mt-3">
-                <router-link :to="{ name: 'Home' }" class="btn text-success selectable text-uppercase">
-                <p class="mx-3">HITCH TRAILER NOW</p>
+            <div class="col-12 d-flex justify-content-between mt-4">
+                <router-link :to="{ name: 'Home' }" class="btn text-light fw-bold selectable text-uppercase my-2">
+                <p class="mx-2">trailer connect</p>
             </router-link>
-                <div class="justify-content-end">
+                <div class="p-1 mx-5">
                     <Login />
                 </div>
             </div>

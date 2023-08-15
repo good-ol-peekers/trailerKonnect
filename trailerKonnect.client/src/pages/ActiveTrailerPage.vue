@@ -53,8 +53,8 @@
             
             <div class="col-12">
                 <h1>Meet Trailer Host</h1>
-                <h1>{{ activeTrailer?.trailerOwner?.name }}</h1>
-                <img class="img-fluid selectable" :src="activeTrailer?.trailerOwner?.picture" alt="profile pic">
+                <h1>{{ activeTrailer?.profile?.name }}</h1>
+                <img class="img-fluid selectable" :src="activeTrailer?.profile?.picture" alt="profile pic">
             </div>
         </div>
     </div>
@@ -105,6 +105,7 @@ export default {
                 }
             },
             activeTrailer: computed(() => AppState.trailer),
+            profile: computed(() => AppState.profile),
 
         }
     }

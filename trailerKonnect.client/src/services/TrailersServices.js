@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js"
+import { Profile } from "../models/Profile.js"
 import { Trailer } from "../models/Trailer.js"
 import { logger } from "../utils/Logger.js"
 import { api } from "./AxiosService.js"
@@ -28,6 +29,7 @@ class TrailersService {
     const res = await api.get('api/trailer/' + trailerId)
     logger.log('get trailer by Id', res.data)
     AppState.trailer = new Trailer(res.data)
+    AppState.profile = new Profile(res.data.profile)
     }
 
 }
